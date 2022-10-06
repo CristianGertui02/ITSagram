@@ -1,0 +1,7 @@
+{
+  "name": "itsagram",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
