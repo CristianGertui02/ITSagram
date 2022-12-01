@@ -1,0 +1,50 @@
+<form [formGroup]="userForm" (ngSubmit)="submit()">
+  <ion-item>
+
+    <ion-label position="floating">Nickname</ion-label>
+    <ion-input autofocus="true" type="text" autocomplete="off" formControlName="nickname"></ion-input>
+
+  </ion-item>
+
+  <ion-item> 
+
+    <ion-label position="floating">Name</ion-label>
+    <ion-input type="text" autocomplete="name" formControlName="name"></ion-input>
+
+  </ion-item>
+
+  <ion-item> 
+
+    <ion-label position="floating">Surname</ion-label>
+    <ion-input type="text" autocomplete="off" formControlName="surname"></ion-input>
+
+  </ion-item>
+
+  <ion-item>
+
+    <ion-label position="floating">Email address</ion-label>
+    <ion-input type="text" autocomplete="email" formControlName="email_address"></ion-input>
+
+  </ion-item>
+
+  <ion-item> 
+
+    <ion-label position="floating">Password</ion-label>
+    <ion-input type="password" autocomplete="off" formControlName="password"></ion-input>
+
+  </ion-item>
+
+  <ion-item> 
+    <ion-label position="floating">Confirm password</ion-label>
+    <ion-input type="password" autocomplete="off"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none">
+
+    <ion-checkbox slot="start" formControlName="age"></ion-checkbox>
+    <ion-label>I'm 18 years old or older</ion-label>
+
+  </ion-item>
+
+  <ion-button type="submit" [disabled]="!userForm.valid">Submit</ion-button>
+</form>

@@ -1,0 +1,52 @@
+<ion-content>
+ 
+  <div class="mainContainer">
+
+    <div class="logoContainer">
+      <app-logo></app-logo>
+    </div>
+    
+    <div id="childContainer">
+      <ion-grid>
+
+        <ion-row>
+
+          <ion-col>
+              <ion-button (click)="goToRegister()">Register</ion-button>
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row>
+
+          <ion-col>
+            <h6 style="font-style: italic ;">or</h6>
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row>
+
+          <ion-col>
+              <ion-button (click)="goToLogin()">Login</ion-button>
+          </ion-col>
+          
+        </ion-row>
+
+      </ion-grid>
+    </div>
+ 
+  </div>
+
+  
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <div>
+      <a href="https://www.itsumbria.it/">Created by ITS umbria academy</a>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+

@@ -1,0 +1,46 @@
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
+    height: auto;
+    width: 100%;
+  }
+
+  #childContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  #button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25%;
+    }
+
+    ion-button{
+        --border-radius:2em;
+        margin: 0 20px;
+        font-size: medium;
+        width: 200px;
+        --background: #006fff;
+        font-size:medium;
+    }
+
+    ion-toolbar ion-title{
+        margin: 5px 0;
+        text-align: center;
+      }
+    
+    ion-toolbar{
+      display: flex;
+      justify-content: center;
+    }
