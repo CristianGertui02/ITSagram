@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { waitForAsync } from '@angular/core/testing';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsersService } from 'src/services/users.service';
+
 
 @Component({
   selector: 'app-register-form',
@@ -16,24 +19,23 @@ export class RegisterFormComponent implements OnInit {
 
 
 
-  constructor() { 
+  constructor(private userService: UsersService) { 
     this.userForm = new FormGroup({
       nickname:new FormControl('',Validators.required),
       name: new FormControl('',Validators.required),
       surname: new FormControl('',Validators.required),
-      email_address: new FormControl('',Validators.pattern(this.EmailRegExValid)),
+      email_address: new FormControl('',Validators.compose([Validators.pattern(this.EmailRegExValid),Validators.required])),
       password: new FormControl('',Validators.compose([Validators.minLength(8),Validators.required])),
       age: new FormControl(false,Validators.requiredTrue)
     })
-
-    
   }
 
   ngOnInit() {
   }
 
-  submit(){
-    console.log(this.userForm.value.password);
+  async submit(){
+    await this.userService.createUser(this.userForm.value);
+    window.location.href = '/user-profile';
   }
 
 

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="user-profile"></ion-back-button>
     </ion-buttons>
-    <ion-title *ngFor="let user of usersList">{{user.nickname}}</ion-title>
+    <ion-title >nickname</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,9 +15,9 @@
       </ion-avatar>
     </div>
 
-    <div id="childContainer" *ngFor="let user of usersList">{{user.name}} {{user.surname}}</div>
+    <div id="childContainer" >Nome e cognome</div>
     
-    <div id="childContainer" *ngFor="let user of usersList">{{user.email_address}}</div>
+    <div id="childContainer">email</div>
 
     <div id="button">
       <ion-button (click)="goToUserPhotos()">Show user photos</ion-button>

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/services/users.service';
-import {user} from '../../types/user';
+import { user } from 'src/types/user';
 
 @Component({
   selector: 'app-user-profile',
@@ -10,16 +10,18 @@ import {user} from '../../types/user';
 })
 export class UserProfilePage implements OnInit {
 
-  usersList : user[];
+  user : user;
 
-  constructor(private userService: UsersService, private router: Router) { }
+  constructor(private userService: UsersService, private router: Router) {
+   }
 
   ngOnInit() {
-    this.fillUsers();
+    this.fillUser();
   }
 
-  async fillUsers(){
-    this.usersList = (await this.userService.getAllUser()).data;
+  //riempie gli utenti DA COMPLETARE
+  async fillUser(){
+     this.user = (await this.userService.getUser()).data;
   }
 
   //Metodo per navigare alla pagina delle foto dell'utente
