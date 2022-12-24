@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { promise } from 'protractor';
 import { user } from 'src/types/user';
 
 @Injectable({
@@ -12,8 +11,8 @@ export class UsersService {
   }
 
   //chiamata http get per prendere l'utente con un certo nickname DA COMPLETARE
-  getUser() : Promise <{data : user}>{
-    return this.http.get<{data:user}>('/api/items/user?filter[nickname]=crisuo').toPromise();
+  getUser() : Promise <{data : user[]}>{
+    return this.http.get<{data:user[]}>('/api/items/user?filter[nickname]=crisuo').toPromise();
   }
 
   createUser(user){

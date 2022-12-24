@@ -1,26 +1,37 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="user-profile"></ion-back-button>
-    </ion-buttons>
-    <ion-title >nickname</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ng-template #loading>
+  <h1>Loading...</h1>
+</ng-template>
 
-<ion-content>
-  <div class="mainContainer">
-    <div id="childContainer">
-      <ion-avatar>
-        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-      </ion-avatar>
-    </div>
+<div id="mainContent" *ngIf="user;else loading">
+  <div id="mainContent" *ngFor="let user of user">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="user-profile"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{user.nickname}}</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-    <div id="childContainer" >Nome e cognome</div>
-    
-    <div id="childContainer">email</div>
+    <ion-content>
+      <div class="mainContainer">
+        <div id="childContainer">
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+        </div>
 
-    <div id="button">
-      <ion-button (click)="goToUserPhotos()">Show user photos</ion-button>
-    </div>
+        <div id="childContainer">{{user.name}} {{user.surname}}</div>
+        
+        <div id="childContainer">{{user.email_address}}</div>
+
+        <div id="button">
+          <ion-button (click)="goToUserPhotos()">Show user photos</ion-button>
+        </div>
+      </div>
+    </ion-content>
   </div>
-</ion-content>
+</div>
+
+
+
